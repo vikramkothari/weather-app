@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="row margin-top">
+		<div class="col-8">
+			<input [(ngModel)]="cityName" placeholder="City name" />
+		</div>
+		<div class="col-4">
+			<button (click)="search()">SEARCH</button>
+		</div>
+
+		<div class="col-12" *ngIf="weatherModelInternals && weatherModelInternals.length > 0">
+			<app-weather-item [item]="weatherModelInternals[0]"></app-weather-item>
+			<app-weather-item [item]="weatherModelInternals[1]"></app-weather-item>
+			<app-weather-item [item]="weatherModelInternals[2]"></app-weather-item>
+		</div>
+		<div class="col-12 margin-top text-center" *ngIf="showErrorMessage  && !isDataLoading">
+			<span>Data not found!</span>
+		</div>
+		<div class="col-12 margin-top text-center" *ngIf="isDataLoading">
+			<span>Loading....</span>
+		</div>
+	</div>
+</div>
