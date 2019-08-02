@@ -12,7 +12,7 @@ export class WeatherServiceService {
 	}
 	
 	search(city: string): Observable<WeatherModel> {
-		return this.http.get('http://api.openweathermap.org/data/2.5/forecast?q='+ city +'&APPID=17cbd8997a445969701cdf81ac55170f&units=metric') as Observable<WeatherModel>;
+		return this.http.get('weather?q='+ city +'&APPID=17cbd8997a445969701cdf81ac55170f&units=metric') as Observable<WeatherModel>;
 	}
 
 }
