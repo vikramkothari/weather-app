@@ -1,6 +1,8 @@
 const express = require('express'); 
 const path = require('path'); 
-const app = express(); 
+const app = express();
+const httpProxy = require('http-proxy');
+const apiProxy = httpProxy.createProxyServer(); 
 // Serve static files.... 
 app.use(express.static(__dirname + '/dist/weather-app')); 
 // Send all requests to index.html 
